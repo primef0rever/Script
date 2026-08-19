@@ -74,5 +74,4 @@ task.spawn(function()
 		label.Text = string.format("Ping: %d ms", ping)
 		task.wait(5)
 	end
-end)
-```
+end)```
