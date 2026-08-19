@@ -67,7 +67,6 @@ end)
 
 task.spawn(function()
 	while true do
-		-- Безопасный способ получения пинга
 		local ping = math.floor(Stats.Network.ServerStatsItem["Data Ping"]:GetValue())
 		label.Text = string.format("Ping: %d ms", ping)
 		task.wait(1)
