@@ -3,7 +3,7 @@ local Players = game:GetService("Players")
 local Stats = game:GetService("Stats")
 local UserInputService = game:GetService("UserInputService")
 
-local player = Players.LocalPlayer
+local player = Players.Local Player
 local playerGui = player:WaitForChild("PlayerGui")
 
 local screenGui = Instance.new("ScreenGui")
