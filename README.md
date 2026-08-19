@@ -66,12 +66,11 @@ UserInputService.InputChanged:Connect(function(input)
 end)
 
 task.spawn(function()
-	local performanceStats = Stats:WaitForChild("PerformanceStats")
-	local pingStat = performanceStats:WaitForChild("Ping")
-
 	while true do
-		local ping = math.floor(pingStat:GetValue())
+		-- Безопасный способ получения пинга
+		local ping = math.floor(Stats.Network.ServerStatsItem["Data Ping"]:GetValue())
 		label.Text = string.format("Ping: %d ms", ping)
-		task.wait(5)
+		task.wait(1)
 	end
 end)```
+
