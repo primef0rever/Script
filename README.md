@@ -1,4 +1,5 @@
-```local Players = game:GetService("Players")
+```lua
+local Players = game:GetService("Players")
 local Stats = game:GetService("Stats")
 local UserInputService = game:GetService("UserInputService")
 
