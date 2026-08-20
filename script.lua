@@ -4,7 +4,6 @@ local TweenService = game:GetService("TweenService")
 local LocalPlayer = Players.LocalPlayer
 local PlayerGui = LocalPlayer:WaitForChild("PlayerGui")
 
--- Создание GUI
 local screenGui = Instance.new("ScreenGui")
 screenGui.Name = "ExecutorKillFeed"
 screenGui.ResetOnSpawn = false
@@ -25,7 +24,6 @@ listLayout.SortOrder = Enum.SortOrder.LayoutOrder
 listLayout.Padding = UDim.new(0, 5)
 listLayout.Parent = container
 
--- Функция добавления записи
 local function addEntry(killerName, victimName, weaponName)
 	local frame = Instance.new("Frame")
 	frame.Size = UDim2.new(1, 0, 0, 30)
@@ -68,7 +66,6 @@ local function addEntry(killerName, victimName, weaponName)
 	end)
 end
 
--- Отслеживание смертей через клиент
 local function trackPlayer(p)
 	local function onChar(char)
 		local hum = char:WaitForChild("Humanoid", 10)
@@ -83,8 +80,8 @@ local function trackPlayer(p)
 			if creator and creator.Value then
 				killerName = creator.Value.Name
 			else
-				-- Если метки нет, ищем кто находился ближе всего с оружием в руках
-				local minDistance = 20
+
+				local minDistance = 50
 				for _, otherPlayer in ipairs(Players:GetPlayers()) do
 					if otherPlayer ~= p and otherPlayer.Character and otherPlayer.Character:FindFirstChild("HumanoidRootPart") then
 						local dist = (otherPlayer.Character.HumanoidRootPart.Position - char.HumanoidRootPart.Position).Magnitude
